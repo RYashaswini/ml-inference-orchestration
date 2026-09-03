@@ -1,0 +1,10 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: attrition-deploy-1
+endpoint_name: attrition-endpoint-ryash
+model: azureml:attrition-model:1
+environment: azureml:attrition-scoring-env:1
+code_configuration:
+  code: .
+  scoring_script: score.py
+instance_type: Standard_DS2_v2
+instance_count: 1
