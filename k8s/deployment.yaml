@@ -14,10 +14,12 @@ spec:
       labels:
         app: ml-inference-orchestration
     spec:
+      imagePullSecrets:
+        - name: ghcr-secret
       containers:
         - name: ml-inference-orchestration
-          image: ml-inference-orchestration:latest
-          imagePullPolicy: Never
+          image: ghcr.io/ryashaswini/ml-inference-orchestration:latest
+          imagePullPolicy: Always
           ports:
             - containerPort: 8000
           readinessProbe:
