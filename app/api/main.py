@@ -16,6 +16,7 @@ import uuid
 from fastapi import FastAPI, HTTPException
 from app.core.schemas import AttritionRequest, PromotionRequest, PredictionResponse
 from app.core.model_registry import MODEL_ROUTER, ModelTimeoutError
+from prometheus_fastapi_instrumentator import Instrumentator
 
 logging.basicConfig(
     level=logging.INFO,
@@ -72,3 +73,5 @@ def predict_attrition(payload: AttritionRequest):
 @app.post("/predict/promotion", response_model=PredictionResponse)
 def predict_promotion(payload: PromotionRequest):
     return _handle_prediction("promotion", payload.model_dump())
+
+Instrumentator().instrument(app).expose(app)
