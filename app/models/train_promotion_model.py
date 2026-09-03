@@ -52,5 +52,5 @@ y_proba = pipeline.predict_proba(X_test)[:, 1]
 print(classification_report(y_test, y_pred))
 print("ROC-AUC:", roc_auc_score(y_test, y_proba))
 
-joblib.dump(pipeline, "app/models/promotion_model.joblib")
-print("Saved model to app/models/promotion_model.joblib")
+joblib.dump(pipeline, "app/models/artifacts/promotion_model.joblib")
+print("Saved model to app/models/artifacts/promotion_model.joblib")

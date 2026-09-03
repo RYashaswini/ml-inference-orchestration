@@ -14,8 +14,8 @@ import joblib
 import pandas as pd
 from tenacity import retry, stop_after_attempt, wait_exponential, retry_if_exception_type
 
-ATTRITION_MODEL_PATH = "app/models/attrition_model.joblib"
-PROMOTION_MODEL_PATH = "app/models/promotion_model.joblib"
+ATTRITION_MODEL_PATH = "app/models/artifacts/attrition_model.joblib"
+PROMOTION_MODEL_PATH = "app/models/artifacts/promotion_model.joblib"
 
 _attrition_model = joblib.load(ATTRITION_MODEL_PATH)
 _promotion_model = joblib.load(PROMOTION_MODEL_PATH)

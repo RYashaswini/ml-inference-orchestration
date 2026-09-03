@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ml-inference-orchestration-svc
+spec:
+  selector:
+    app: ml-inference-orchestration
+  ports:
+    - port: 80
+      targetPort: 8000
+  type: ClusterIP
